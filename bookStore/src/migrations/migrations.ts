@@ -7,7 +7,7 @@ const createUsersTable = async () => {
       CREATE TABLE IF NOT EXISTS users (
         id SERIAL PRIMARY KEY,
         name VARCHAR(100) NOT NULL,
-        email VARCHAR(100) UNIQUE NOT NULL
+        email VARCHAR(100) UNIQUE NOT NULL,
         passwordHash VARCHAR(100) NOT NULL
       );
     `;
@@ -20,25 +20,5 @@ const createUsersTable = async () => {
   }
 };
 
-createUsersTable();
-const createBooksTable = async () => {
-  const client = await pool.connect();
-  try {
-    const queryText = `
-      CREATE TABLE IF NOT EXISTS books (
-        id SERIAL PRIMARY KEY,
-        title VARCHAR(100) NOT NULL,
-        author VARCHAR(100) NOT NULL,
-        genre VARCHAR(100) NOT NULL,
-        price DECIMAL(10, 2) NOT NULL,
-      );
-    `;
-    await client.query(queryText);
-    console.log('Tabela "books" criada com sucesso!');
-  } catch (err) {
-    console.error("Erro ao criar tabela:", err);
-  } finally {
-    client.release();
-  }
-};
-createBooksTable().then(() => process.exit(0));
+
+createUsersTable().then(() => process.exit(0));

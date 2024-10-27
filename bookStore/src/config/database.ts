@@ -1,7 +1,7 @@
 import { Pool } from "pg";
 
 const connectionString =
-  "postgresql://postgres:JphtLLBaZPmRLxVPuNcSnwqQJNLoWcSU@junction.proxy.rlwy.net:36200/railway";
+  "postgresql://postgres:NWJIPpsJsypjmyliFiCZSRSKUksguNpM@junction.proxy.rlwy.net:54382/railway";
 
 const pool = new Pool({
   connectionString,
