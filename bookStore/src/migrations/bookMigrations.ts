@@ -9,7 +9,7 @@ const createBooksTable = async () => {
         title VARCHAR(100) NOT NULL,
         author VARCHAR(100) NOT NULL,
         genre VARCHAR(100) NOT NULL,
-        price DECIMAL(10, 2) NOT NULL,
+        price DECIMAL(10, 2) NOT NULL
       );
     `;
     await client.query(queryText);
